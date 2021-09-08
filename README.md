@@ -1,8 +1,8 @@
 # wic-applet-cli
 
 <p align="left">
-  <a href="https://github.com/boutstruggle/wic-applet-cli/blob/main/CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-blue.svg" alt="Changelog"></a>
-  <a href="https://github.com/boutstruggle/wic-applet-cli/blob/main/CHANGELOG.md"><img src="https://img.shields.io/badge/base-Wic-orange.svg" alt="Base template"></a>
+  <a href="https://github.com/blcher/wic-applet-cli/blob/master/CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-blue.svg" alt="Changelog"></a>
+  <a href="https://github.com/blcher/wic-applet-cli/blob/master/CHANGELOG.md"><img src="https://img.shields.io/badge/base-Wic-orange.svg" alt="Base template"></a>
 </p>
 
 (Note: still in `Dev`, downloading it carefully!!! :dash::dash::dash:)
