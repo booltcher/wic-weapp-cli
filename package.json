@@ -1,6 +1,6 @@
 {
   "name": "wic-applet-cli",
-  "version": "0.0.12",
+  "version": "0.0.2",
   "description": "a cli for fast generating applet projects",
   "main": "index.js",
   "bin": {
@@ -28,7 +28,7 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
-    "@types/node": "^16.7.10",
+    "@types/node": "^16.7.13",
     "eslint": "^7.32.0",
     "git-cz": "^4.7.6",
     "husky": "^7.0.2",
@@ -37,6 +37,7 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^6.1.0",
+    "console-grid": "^1.0.17",
     "download-git-repo": "^3.0.2",
     "ejs": "^3.1.6",
     "inquirer": "^8.1.2",
