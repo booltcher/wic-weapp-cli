@@ -1,6 +1,6 @@
 {
   "name": "wic-applet-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a cli for fast generating applet projects",
   "main": "index.js",
   "bin": {
