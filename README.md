@@ -2,7 +2,7 @@
 
 <p align="left">
   <a href="https://github.com/blcher/wic-applet-cli/blob/master/CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-blue.svg" alt="Changelog"></a>
-  <a href="https://github.com/blcher/wic-applet-cli/blob/master/CHANGELOG.md"><img src="https://img.shields.io/badge/base-Wic-orange.svg" alt="Base template"></a>
+  <a href="https://github.com/blcher/wic-applet-template"><img src="https://img.shields.io/badge/base-Wic-orange.svg" alt="Base template"></a>
 </p>
 
 (Note: still in `Dev`, downloading it carefully!!! :dash::dash::dash:)
@@ -19,8 +19,6 @@ npm install wic-applet-cli -g
 ```
 
 # Usage
-
----
 
 ## Version
 
@@ -53,8 +51,6 @@ The cases below can help you to make choices:
 
 - When you: confirm using the native applet tabbar
   - It will: generate those pages which is in tabbar list, and set `tabBar` in file **app.json**, then import them in `pages` automatically
-
----
 
 ## Create new page
 
