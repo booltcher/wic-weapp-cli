@@ -1,30 +1,28 @@
-
 # wic-weapp-cli
 
 <p align="left">
   <a href="https://github.com/blcher/wic-weapp-cli/blob/master/CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-blue.svg" alt="Changelog"></a>
   <a href="https://github.com/blcher/wic-weapp-template"><img src="https://img.shields.io/badge/Template-Wic-orange.svg" alt="Base template"></a>
-
-  <a href="https://github.com/blcher/wic-weapp-cli/blob/master/CHANGELOG.md"><img src="https://img.shields.io/badge/Docs-%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3-red.svg" alt="Chinese Docs"></a>
-  <a href="https://github.com/blcher/wic-weapp-template"><img src="https://img.shields.io/badge/Docs-English-yellow.svg" alt="English Docs"></a>
+<a href="https://github.com/blcher/wic-weapp-cli/blob/master/README.CN.md"><img src="https://img.shields.io/badge/Docs-%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3-red.svg" alt="Chinese Docs"></a>
+<a href="https://github.com/blcher/wic-weapp-cli#readme"><img src="https://img.shields.io/badge/Docs-English-yellow.svg" alt="English Docs"></a>
 </p>
 
-(Note: still in `Dev`, use it carefully!!! :dash::dash::dash:)
+(注意: 仍处于开发阶段, 请勿用于生产!!! :dash::dash::dash:)
 
-<p>A scaffold uesd to fast generate a weapp projects.
+<p>一个用于快速生成小程序项目的脚手架。
 </p>
 
-> prerequisite: `node` `git`
+> 前置条件: `node` `git`
 
-# Installation
+# 安装
 
 ```
 npm install wic-weapp-cli -g
 ```
 
-# Usage
+# 使用
 
-## Version
+## 版本
 
 ```
 wic --version
@@ -33,24 +31,24 @@ wic -V
 
 <!-- > note: only version before 6.1.0 of commander is supported currently (#FIXME: just check out version 8.1.0 can not) -->
 
-## Options
+## 选项
 
-| short | long     | descirption                                                               | scope       |
-| ----- | -------- | ------------------------------------------------------------------------- | ----------- |
-| -d    | --dest   | destination                                                               | page        |
-| -a    | --add    | add from Built-in                                                         | page, com   |
-| -c    | --create | create new one                                                            | page, com   |
-| -r    | --remove | remove iconfont file after updating                                       | update-icon |
-| -l    | --list   | define a page as a paging list, within _Paging Class_ and list component. | page        |
-| -f    | --form   | define a page as a form page, within the form validator                   | page        |
+| short | long     | descirption                                                        | scope       |
+| ----- | -------- | ------------------------------------------------------------------ | ----------- |
+| -d    | --dest   | 位置。                                                             | page        |
+| -a    | --add    | 从内置模板中添加...                                                | page, com   |
+| -c    | --create | 新建...                                                            | page, com   |
+| -r    | --remove | 更新后自动删除原文件。                                             | update-icon |
+| -l    | --list   | 定义一个页面为分页列表, 包含有 _Paging Class_ 和其他分页相关配置。 | page        |
+| -f    | --form   | 定义一个页面为表单页, 包含有表单验证方法。                         | page        |
 
 <!-- | -n    | --network | auto import _Request Class_                                               | page, com   | -->
 
-# Commands
+# 指令
 
-## Create new project
+## 新建项目
 
-generate a new weapp project with the template downloaded from [wic-weapp-template](https://github.com/boutstruggle/wic-weapp-template.git)
+生成小程序项目，项目模板来源于 [wic-weapp-template](https://github.com/boutstruggle/wic-weapp-template.git)
 
 ```
 wic create <projectName>
@@ -61,7 +59,9 @@ wic create <projectName>
 - When you: confirm using the native weapp tabbar
   - It will: generate those pages which is in tabbar list, and set `tabBar` in file **app.json**, then import them in `pages` automatically -->
 
-## Create new page
+## 页面
+
+默认引入`toast`相关方法，以及网络请求方法。
 
 ```
 wic page <pageName> [options]
@@ -69,33 +69,32 @@ wic page <pageName> [options]
 
 ### options:
 
-| short | long      | descirption                                                               | scope       |
-| ----- | --------- | ------------------------------------------------------------------------- | ----------- |
-| -a    | --add     | add from Built-in                                                         | page, com   |
-| -c    | --create  | create new one                                                            | page, com   |
-| -n    | --network | auto import _Request Class_                                               | page, com   |
-| -l    | --list    | define a page as a paging list, within _Paging Class_ and list component. | page, com   |
-| -f    | --form    | define a page as a form page, within the form validator                   | update-icon |
+| short | long     | descirption                                                        | scope       |
+| ----- | -------- | ------------------------------------------------------------------ | ----------- |
+| -a    | --add    | 从内置页面中引入。                                                 | page, com   |
+| -c    | --create | 新建自定义页面。                                                   | page, com   |
+| -l    | --list   | 定义一个页面为分页列表, 包含有 _Paging Class_ 和其他分页相关配置。 | page, com   |
+| -f    | --form   | 定义一个页面为表单页, 包含有表单验证方法。                         | update-icon |
 
-## Create new component
+## 组件
 
 ```
 wic com <componentName> [-d]
 ```
 
-## Create new util function
+## 函数
 
 ```
 wic util <utilName> [-a | -c]
 ```
 
-## Add build-in module
+## 模块
 
 ```
 wic module <module> [-m, -t]
 ```
 
-## Set global config
+## 配置
 
 - No key & value: Browse all configurations.
 - Just key: Check current configure about [key]
@@ -108,14 +107,14 @@ example:
 wic config icon-file-path C:/Users/bootcher/Desktop/download.zip
 ```
 
-### Default Keys:
+### 默认键:
 
 - icon-input-path
 - icon-input-name
 
-## Update icon font file
+## 更新字体图标
 
-use this command with [iconfont](https://www.iconfont.cn/)
+与 iconfont 配合使用。 [iconfont](https://www.iconfont.cn/)
 
 ```
 wic update-icon [option]
@@ -123,9 +122,9 @@ wic update-icon [option]
 
 ### Options:
 
-| short | long     | descirption                                                                                         |
-| ----- | -------- | --------------------------------------------------------------------------------------------------- |
-| -r    | --remove | remove iconfont file after updating, **Notice: This 'remove' means that deleting file Thoroughly!** |
+| short | long     | descirption                                                |
+| ----- | -------- | ---------------------------------------------------------- |
+| -r    | --remove | 更新后自动删除原文件, **注意：此"删除"的含义是彻底删除。** |
 
 ## Modules
 

@@ -3,8 +3,7 @@
 <p align="left">
   <a href="https://github.com/blcher/wic-weapp-cli/blob/master/CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-blue.svg" alt="Changelog"></a>
   <a href="https://github.com/blcher/wic-weapp-template"><img src="https://img.shields.io/badge/Template-Wic-orange.svg" alt="Base template"></a>
-
-  <a href="https://github.com/blcher/wic-weapp-cli#readme"><img src="https://img.shields.io/badge/Docs-%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3-red.svg" alt="Chinese Docs"></a>
+  <a href="https://github.com/blcher/wic-weapp-cli/blob/master/README.CN.md"><img src="https://img.shields.io/badge/Docs-%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3-red.svg" alt="Chinese Docs"></a>
   <a href="https://github.com/blcher/wic-weapp-cli#readme"><img src="https://img.shields.io/badge/Docs-English-yellow.svg" alt="English Docs"></a>
 </p>
 
@@ -68,13 +67,12 @@ wic page <pageName> [options]
 
 ### options:
 
-| short | long      | descirption                                                               | scope       |
-| ----- | --------- | ------------------------------------------------------------------------- | ----------- |
-| -a    | --add     | add from Built-in                                                         | page, com   |
-| -c    | --create  | create new one                                                            | page, com   |
-| -n    | --network | auto import _Request Class_                                               | page, com   |
-| -l    | --list    | define a page as a paging list, within _Paging Class_ and list component. | page, com   |
-| -f    | --form    | define a page as a form page, within the form validator                   | update-icon |
+| short | long     | descirption                                                               | scope       |
+| ----- | -------- | ------------------------------------------------------------------------- | ----------- |
+| -a    | --add    | add from Built-in                                                         | page, com   |
+| -c    | --create | create new one                                                            | page, com   |
+| -l    | --list   | define a page as a paging list, within _Paging Class_ and list component. | page, com   |
+| -f    | --form   | define a page as a form page, within the form validator                   | update-icon |
 
 ## Create new component
 
