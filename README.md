@@ -1,13 +1,13 @@
-# wic-applet-cli
+# wic-weapp-cli
 
 <p align="left">
   <a href="https://github.com/blcher/wic-applet-cli/blob/master/CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-blue.svg" alt="Changelog"></a>
   <a href="https://github.com/blcher/wic-applet-template"><img src="https://img.shields.io/badge/base-Wic-orange.svg" alt="Base template"></a>
 </p>
 
-(Note: still in `Dev`, downloading it carefully!!! :dash::dash::dash:)
+(Note: still in `Dev`, use it carefully!!! :dash::dash::dash:)
 
-<p>A cli for fast generating applet projects, which import Vant Weapp as UI framework.
+<p>A scaffold uesd to fast generate a weapp projects.
 </p>
 
 > prerequisite: `node` `git`
@@ -31,11 +31,16 @@ wic -V
 
 ## Options
 
-| short | long     | descirption           | scope     |
-| ----- | -------- | --------------------- | --------- |
-| -d    | --dest   | destination           | create    |
-| -a    | --add    | add from CLI built-in | page, com |
-| -c    | --create | create new one        | page, com |
+| short | long     | descirption                                                               | scope       |
+| ----- | -------- | ------------------------------------------------------------------------- | ----------- |
+| -d    | --dest   | destination                                                               | page        |
+| -a    | --add    | add from Built-in                                                         | page, com   |
+| -c    | --create | create new one                                                            | page, com   |
+| -r    | --remove | remove iconfont file after updating                                       | update-icon |
+| -l    | --list   | define a page as a paging list, within _Paging Class_ and list component. | page        |
+| -f    | --form   | define a page as a form page, within the form validator                   | page        |
+
+<!-- | -n    | --network | auto import _Request Class_                                               | page, com   | -->
 
 # Commands
 
@@ -55,14 +60,18 @@ The cases below can help you to make choices:
 ## Create new page
 
 ```
-wic page <projectName> [options]
+wic page <pageName> [options]
 ```
 
 ### options:
 
-- `-n` `--network`: auto import Http _Request Class_
-- `-l` `--list`: define a page as a paging list, within _Paging Class_ and list component.
-- `-f` `--form`: define a page as a form page, within the form validator
+| short | long      | descirption                                                               | scope       |
+| ----- | --------- | ------------------------------------------------------------------------- | ----------- |
+| -a    | --add     | add from Built-in                                                         | page, com   |
+| -c    | --create  | create new one                                                            | page, com   |
+| -n    | --network | auto import _Request Class_                                               | page, com   |
+| -l    | --list    | define a page as a paging list, within _Paging Class_ and list component. | page, com   |
+| -f    | --form    | define a page as a form page, within the form validator                   | update-icon |
 
 ## Create new component
 
@@ -89,21 +98,13 @@ wic module <module> [-m, -t]
 - Key & Value: Set the [value] for [key]
 
 ```
-wic config [configKey] [configValue] [options]
+wic config [configKey] [configValue]
 
 example:
-wic config icon-file-path
-// ...path
-wic config icon-file-path C:\Users\bootcher\Desktop\Iconfont
+wic config icon-file-path C:/Users/bootcher/Desktop/download.zip
 ```
 
-### Options:
-
-| short | long  | descirption                            | scope  |
-| ----- | ----- | -------------------------------------- | ------ |
-| -z    | --zip | specify the targe as a compressed file | create |
-
-### Keys:
+### Default Keys:
 
 - icon-input-path
 - icon-input-name
@@ -113,15 +114,14 @@ wic config icon-file-path C:\Users\bootcher\Desktop\Iconfont
 use this command with [iconfont](https://www.iconfont.cn/)
 
 ```
-wic update-icon
+wic update-icon [option]
 ```
 
-How it works?
+### Options:
 
-1.  search for files which named download.zip
-2.  find the latast version
-3.  extract
-4.  read content from icon.css
+| short | long     | descirption                                                                                         |
+| ----- | -------- | --------------------------------------------------------------------------------------------------- |
+| -r    | --remove | remove iconfont file after updating, **Notice: This 'remove' means that deleting file Thoroughly!** |
 
 ## Modules
 
