@@ -7,12 +7,12 @@
   <a href="https://github.com/blcher/wic-weapp-cli#readme"><img src="https://img.shields.io/badge/Docs-English-yellow.svg" alt="English Docs"></a>
 </p>
 
-(Note: still in `Dev`, use it carefully!!! :dash::dash::dash:)
+(Note: still in `Dev`, use it carefully!!! :hand::dash::dash::dash:)
 
-<p>A scaffold uesd to fast generate a weapp projects.
+<p>A scaffold uesd to fast develop weapp projects.
 </p>
 
-> prerequisite: `node` `git`
+> prerequisite: `Node` `Git`
 
 # Installation
 
@@ -35,12 +35,12 @@ wic -V
 
 | short | long     | descirption                                                               | scope       |
 | ----- | -------- | ------------------------------------------------------------------------- | ----------- |
-| -d    | --dest   | destination                                                               | page        |
-| -a    | --add    | add from Built-in                                                         | page, com   |
-| -c    | --create | create new one                                                            | page, com   |
+| -d    | --dest   | destination                                                               | create-page |
+| -a    | --add    | add from Built-in                                                         | com         |
+| -c    | --create | create new one                                                            | com         |
 | -r    | --remove | remove iconfont file after updating                                       | update-icon |
-| -l    | --list   | define a page as a paging list, within _Paging Class_ and list component. | page        |
-| -f    | --form   | define a page as a form page, within the form validator                   | page        |
+| -l    | --list   | define a page as a paging list, within _Paging Class_ and list component. | create-page |
+| -f    | --form   | define a page as a form page, within the form validator                   | create-page |
 
 <!-- | -n    | --network | auto import _Request Class_                                               | page, com   | -->
 
@@ -48,10 +48,10 @@ wic -V
 
 ## Create new project
 
-generate a new weapp project with the template downloaded from [wic-weapp-template](https://github.com/boutstruggle/wic-weapp-template.git)
+generate a new weapp project with the template downloaded from :trophy: [wic-weapp-template](https://github.com/blcher/wic-weapp-template.git)
 
 ```
-wic create <projectName>
+wic init <projectName>
 ```
 
 <!-- The cases below can help you to make choices:
@@ -62,17 +62,16 @@ wic create <projectName>
 ## Create new page
 
 ```
-wic page <pageName> [options]
+wic create-page <pageName> [options]
 ```
 
 ### options:
 
-| short | long     | descirption                                                               | scope       |
-| ----- | -------- | ------------------------------------------------------------------------- | ----------- |
-| -a    | --add    | add from Built-in                                                         | page, com   |
-| -c    | --create | create new one                                                            | page, com   |
-| -l    | --list   | define a page as a paging list, within _Paging Class_ and list component. | page, com   |
-| -f    | --form   | define a page as a form page, within the form validator                   | update-icon |
+| short | long   | descirption                                                               |
+| ----- | ------ | ------------------------------------------------------------------------- |
+| -l    | --list | define a page as a paging list, within _Paging Class_ and list component. |
+| -f    | --form | define a page as a form page, within the form validator                   |
+| -d    | --dest | destination                                                               |
 
 ## Create new component
 
@@ -92,6 +91,12 @@ wic util <utilName> [-a | -c]
 wic module <module> [-m, -t]
 ```
 
+### options:
+
+| short | long     | descirption                                                               |
+| ----- | -------- | ------------------------------------------------------------------------- |
+
+
 ## Set global config
 
 - No key & value: Browse all configurations.
@@ -101,7 +106,7 @@ wic module <module> [-m, -t]
 ```
 wic config [configKey] [configValue]
 
-example:
+// Example:
 wic config icon-file-path C:/Users/bootcher/Desktop/download.zip
 ```
 
@@ -110,9 +115,9 @@ wic config icon-file-path C:/Users/bootcher/Desktop/download.zip
 - icon-input-path
 - icon-input-name
 
-## Update icon font file
+## Update icon font
 
-use this command with [iconfont](https://www.iconfont.cn/)
+use this command with [iconfont](https://www.iconfont.cn/) :see_no_evil:
 
 ```
 wic update-icon [option]
@@ -124,10 +129,10 @@ wic update-icon [option]
 | ----- | -------- | --------------------------------------------------------------------------------------------------- |
 | -r    | --remove | remove iconfont file after updating, **Notice: This 'remove' means that deleting file Thoroughly!** |
 
-## Modules
+## Modules :coffee:
 
-### address
+### address :coffee:
 
-### order
+### order :coffee:
 
 ##
