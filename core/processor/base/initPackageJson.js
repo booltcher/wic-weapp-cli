@@ -1,10 +1,8 @@
 const fs = require("fs");
-const ora = require("ora");
-const tip = require("../../../utils/tip");
+const { Log, Spn } = require("../../../lib/utils/logger");
 
 const initPackageJson = async (appName) => {
-  const spn = ora("Initing: package.json ...");
-  spn.start();
+  Spn.start("Initing: package.json ...");
 
   try {
     const pkgJsonFilePath = `${appName}/package.json`;
@@ -16,11 +14,11 @@ const initPackageJson = async (appName) => {
       JSON.stringify(pkgJsonFileContent, null, "\t")
     );
 
-    spn.stop();
-    tip("success", "Done: init package.json!");
+    Spn.stop();
+    Log("success", "Done: init package.json!");
   } catch (error) {
-    spn.stop();
-    tip("error", error);
+    Spn.stop();
+    Log("error", error);
   }
 };
 

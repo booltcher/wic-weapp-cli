@@ -1,14 +1,12 @@
 const fs = require("fs");
-const ora = require("ora");
-const firstUpperCase = require("../../../utils/firstUppercase");
-const tip = require("../../../utils/tip");
-const generateNewPage = require("../../generateNewPage");
+const firstUpperCase = require("../../../lib/utils/firstUppercase");
+const { Log, Spn } = require("../../../lib/utils/logger");
+const genPage = require("../../generator/genPage");
 
 const defaultPages = ["index", "user", "authorize"];
 
 const initAppJson = async (appName, tabbarFlag, tabbarList) => {
-  const spn = ora("Initing: app.json...");
-  spn.start();
+  Spn.start("Initing: app.json...");
 
   try {
     const appJsonFilePath = `${appName}/app.json`;
@@ -34,7 +32,7 @@ const initAppJson = async (appName, tabbarFlag, tabbarList) => {
         });
         if (!defaultPages.includes(tab)) {
           appJsonFileContent.pages.push(`pages/${tabFirstUpperCase}/${tab}`);
-          await generateNewPage(tab, `${appName}/pages`, false, false);
+          await genPage(tab, `${appName}/pages`, false, false);
         }
       });
       appJsonFileContent.tabBar = tabbarConfig;
@@ -45,11 +43,11 @@ const initAppJson = async (appName, tabbarFlag, tabbarList) => {
       JSON.stringify(appJsonFileContent, null, "\t")
     );
 
-    spn.stop();
-    tip("success", "Done: init app.json!");
+    Spn.stop();
+    Log("success", "Done: init app.json!");
   } catch (error) {
     spn.stop();
-    tip("error", error);
+    Log("error", error);
   }
 };
 

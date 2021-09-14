@@ -1,10 +1,8 @@
-const ora = require("ora");
-const tip = require("../../../utils/tip");
-const { commandSpawn } = require("../../../utils/terminal");
+const { Log, Spn } = require("../../../lib/utils/logger");
+const { commandSpawn } = require("../../../lib/utils/terminal");
 
 const installDependencies = async (appName) => {
-  const spn = ora("Installing: dependencies...");
-  spn.start();
+  Spn.start("Installing: dependencies...");
 
   try {
     const commandForOS = process.platform === "win32" ? "npm.cmd" : "npm";
@@ -12,11 +10,11 @@ const installDependencies = async (appName) => {
       cwd: `./${appName}`,
     });
 
-    spn.stop();
-    tip("success", "Done: install dependencies!");
+    Spn.stop();
+    Log("success", "Done: install dependencies!");
   } catch (error) {
-    spn.stop();
-    tip("error", error);
+    Spn.stop();
+    Log("error", error);
   }
 };
 

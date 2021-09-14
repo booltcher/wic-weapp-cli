@@ -1,23 +1,21 @@
 const { promisify } = require("util");
 const download = promisify(require("download-git-repo"));
-const ora = require("ora");
-const tip = require("../../../utils/tip");
-const { appletRepoLink } = require("../../../config/repo.config");
+const { Log, Spn } = require("../../../lib/utils/logger");
+const { repoLink } = require("../../config/repo.config");
 
 const downloadTplFromGithub = async (appName) => {
-  const spn = ora("Downloading: template files from github...");
-  spn.start();
+  Spn.start("Downloading: template files from github...");
 
   try {
-    await download(appletRepoLink, appName, {
+    await download(repoLink, appName, {
       clone: true,
     });
 
-    spn.stop();
-    tip("success", "Done: generate base construction!");
+    Spn.stop();
+    Log("success", "Done: generate base construction!");
   } catch (error) {
-    spn.stop();
-    tip("error", error);
+    Spn.stop();
+    Log("error", error);
   }
 };
 

@@ -1,7 +1,7 @@
-const generateModule = require("../../generateModule")
+
 const moduleProcessor = (moduleList) => {
     moduleList.map( mod => {
-        generateModule(mod)
+        console.log(mod)
     })
 }
 

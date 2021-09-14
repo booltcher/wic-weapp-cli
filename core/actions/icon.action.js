@@ -1,11 +1,10 @@
 const fs = require("fs");
-const tip = require("../../../utils/tip");
-const ora = require("ora");
+const { Log, Spn } = require("../../lib/utils/logger");
 const AdmZip = require("adm-zip");
 const path = require("path");
 
 const globalSetting = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, "../../../config/user.config.json"))
+  fs.readFileSync(path.resolve(__dirname, "../config/user.config.json"))
 );
 const iconFilePath = globalSetting["icon-file-path"];
 const iconFileName = globalSetting["icon-file-name"];
@@ -47,8 +46,7 @@ const removePreviousIconRecursive = () => {
 };
 
 const updateIconAction = async (isRemoveAfterUpdate) => {
-  const spn = ora("Updating: icon font ...");
-  spn.start();
+  Spn.start("Updating: icon font ...");
 
   try {
     const newIconFontFileContent = iconFilePath.includes(".zip")
@@ -65,11 +63,11 @@ const updateIconAction = async (isRemoveAfterUpdate) => {
         : removePreviousIconRecursive();
     }
 
-    spn.stop();
-    tip("success", "Update done!");
+    Spn.stop();
+    Log("success", "Update done!");
   } catch (error) {
-    spn.stop();
-    tip("error", error);
+    Spn.stop();
+    Log("error", error);
   }
 };
 

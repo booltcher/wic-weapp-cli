@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const Grid = require("console-grid");
-const tip = require("../../../utils/tip");
+const { Log } = require("../../lib/utils/logger");
 
 const grid = new Grid();
 
@@ -35,7 +35,7 @@ const genTableConstruction = (config) => {
 // fixme: get from common
 // fixme: set it in cli file ? or user file
 let userConfig = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, "../../../config/user.config.json"))
+  fs.readFileSync(path.resolve(__dirname, "../config/user.config.json"))
 );
 
 const showCurrentConfiguration = async () => {
@@ -44,10 +44,10 @@ const showCurrentConfiguration = async () => {
 
 const showThisKeyConfiguration = (key) => {
   if (!Object.keys(userConfig).includes(key)) {
-    tip("warn", "Unset key.");
+    Log("warn", "Unset key.");
     return;
   }
-  tip("info", userConfig[key]);
+  Log("info", userConfig[key]);
 };
 
 const setConfigure = (key, value) => {
@@ -56,7 +56,7 @@ const setConfigure = (key, value) => {
     path.resolve(__dirname, "../../../config/user.config.json"),
     JSON.stringify(userConfig, null, "\t")
   );
-  tip("success", "Set successfully!");
+  Log("success", "Set successfully!");
 };
 
 const globalConfigAction = (key, value, opt) => {

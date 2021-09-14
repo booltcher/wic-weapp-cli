@@ -1,5 +1,5 @@
 const program = require("commander");
-const logoAction = require("./actions/logoAction");
+const printLogo = require("../lib/utils/printLogo");
 
 const helpOptions = () => {
   program
@@ -15,7 +15,7 @@ const helpOptions = () => {
 
   program.on("--help", function () {
     console.log("");
-    logoAction();
+    printLogo();
   });
 };
 

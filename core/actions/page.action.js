@@ -1,17 +1,17 @@
 const fs = require("fs");
-const tip = require("../../../utils/tip");
-const generateNewPage = require("../../generateNewPage");
+const { Spn } = require("../../lib/utils/logger");
+const genPage = require("../generator/genPage");
 
 // create new page
 const pageAction = async (name, options, dest) => {
   if (fs.existsSync(dest + "/" + name)) {
-    tip("error", `Page:${name} has already exist!`);
+    Spn("error", `Page:${name} has already exist!`);
     return;
   }
 
   const isList = options && options["list"];
   const isForm = options && options["form"];
-  generateNewPage(name, dest, isList, isForm);
+  genPage(name, dest, isList, isForm);
 };
 
 module.exports = pageAction;

@@ -4,7 +4,7 @@ const componentAction = require("./component.action");
 const utilAction = require("./util.action");
 const moduleAction = require("./module.action");
 const iconAction = require("./icon.action");
-const logoAction = require("./logo.action");
+const configAction = require("./config.action");
 
 module.exports = {
   initAction,
@@ -13,5 +13,5 @@ module.exports = {
   utilAction,
   moduleAction,
   iconAction,
-  logoAction,
+  configAction,
 };
