@@ -35,12 +35,14 @@ wic -V
 
 | short | long     | descirption                                                               | scope       |
 | ----- | -------- | ------------------------------------------------------------------------- | ----------- |
-| -d    | --dest   | destination                                                               | create-page |
 | -a    | --add    | add from Built-in                                                         | com         |
 | -c    | --create | create new one                                                            | com         |
 | -r    | --remove | remove iconfont file after updating                                       | update-icon |
-| -l    | --list   | define a page as a paging list, within _Paging Class_ and list component. | create-page |
-| -f    | --form   | define a page as a form page, within the form validator                   | create-page |
+| -d    | --dest   | destination                                                               | page        |
+| -l    | --list   | define a page as a paging list, within _Paging Class_ and list component. | page        |
+| -f    | --form   | define a page as a form page, within the form validator                   | page        |
+| -rn   | --rename | move page into another directory                                          | page        |
+| -m    | --move   | rename                                                                    | page        |
 
 <!-- | -n    | --network | auto import _Request Class_                                               | page, com   | -->
 
@@ -59,10 +61,18 @@ wic init <projectName>
 - When you: confirm using the native weapp tabbar
   - It will: generate those pages which is in tabbar list, and set `tabBar` in file **app.json**, then import them in `pages` automatically -->
 
-## Create new page
-
+## Page
+### Create page
 ```
-wic create-page <pageName> [options]
+wic page -c <pageName> [ -d | -f | -l ]
+```
+### Rename page
+```
+wic page -rn <oldPageName> <newPageName>
+```
+### Move page
+```
+wic page -m <pageName> <targetDir>
 ```
 
 ### options:
@@ -73,33 +83,55 @@ wic create-page <pageName> [options]
 | -f    | --form | define a page as a form page, within the form validator                   |
 | -d    | --dest | destination                                                               |
 
-## Create new component
+| short | long     | descirption                                                               |
+| ----- | -------- | ------------------------------------------------------------------------- |
+| -d    | --dest   | destination                                                               |
+| -l    | --list   | define a page as a paging list, within _Paging Class_ and list component. |
+| -f    | --form   | define a page as a form page, within the form validator                   |
+| -rn   | --rename | move page into another directory                                          |
 
+## Component
+
+### Add build-in component
+Refer to: [Components](https://github.com/blcher/wic-weapp-template.git)
 ```
-wic com <componentName> [-d]
+wic com -a <componentName>
 ```
 
-## Create new util function
-
+### Create new component
 ```
-wic util <utilName> [-a | -c]
+wic com -c <componentName>
+```
+
+## Util
+
+### Add build-in util
+
+Refer to: [Utils](https://github.com/blcher/wic-weapp-template.git)
+```
+wic util -a <utilName>
+```
+
+### Create util
+```
+wic util -c <utilName>
 ```
 
 ## Add build-in module
 
+Refer to: [Modules](https://github.com/blcher/wic-weapp-template.git)
 ```
-wic module <module> [-m, -t]
+wic add-module <moduleName> [-m, -t]
 ```
 
 ### options:
 
-| short | long     | descirption                                                               |
-| ----- | -------- | ------------------------------------------------------------------------- |
-
+| short | long | descirption |
+| ----- | ---- | ----------- |
 
 ## Set global config
 
-- No key & value: Browse all configurations.
+- No key & No value: Browse all configurations.
 - Just key: Check current configure about [key]
 - Key & Value: Set the [value] for [key]
 
@@ -117,11 +149,15 @@ wic config icon-file-path C:/Users/bootcher/Desktop/download.zip
 
 ## Update icon font
 
-use this command with [iconfont](https://www.iconfont.cn/) :see_no_evil:
-
+To implement easy icon update with [iconfont](https://www.iconfont.cn/) , only need the following steps: :see_no_evil:
+1. Set `icon-file-path` & `icon-file-name`.
+2. Download files from iconfont to `icon-file-path`.
+3. Execute the following command.
 ```
 wic update-icon [option]
 ```
+<!-- Default icon: -->
+
 
 ### Options:
 

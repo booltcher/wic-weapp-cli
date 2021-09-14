@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 const program = require("commander");
-const createCommand = require("./lib/core/create");
-const helpOptions = require("./lib/core/help");
+const createCommand = require("./core/chaos");
+const helpOptions = require("./core/help");
 
 // 查看版本号
 program.version(require("./package.json").version);
