@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/blcher/wic-weapp-cli/compare/v0.0.4...v0.1.0) (2021-09-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* 🧨 it's broken completely.
+* 🧨 delete 'page' command
+
+### Features
+
+* 🎸 update page command ([3088edc](https://github.com/blcher/wic-weapp-cli/commit/3088edcc5cd3e395566d3bc1b973eeaef0eb556d))
+
+
+* 💡 I ruined my project ([ebd5815](https://github.com/blcher/wic-weapp-cli/commit/ebd5815773e3b8a2a647b76e6d5eae0dc70bc3a7))
 
 ## [0.0.2](https://github.com/blcher/wic-weapp-cli/compare/v0.1.0...v0.2.0) (2021-09-10)
 
