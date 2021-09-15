@@ -1,17 +1,21 @@
-const fs = require("fs");
-const { Spn } = require("../../lib/utils/logger");
-const genPage = require("../generator/genPage");
+const createPage = require("../processor/page/createPage");
+const renamePage = require("../processor/page/renamePage");
+const movePage = require("../processor/page/movePage");
 
-// create new page
-const pageAction = async (name, options, dest) => {
-  if (fs.existsSync(dest + "/" + name)) {
-    Spn("error", `Page:${name} has already exist!`);
-    return;
+const pageAction = async (operation, name, subParams, options) => {
+  switch (operation) {
+    case "create":
+      createPage(name, subParams, options);
+      break;
+    case "rename":
+      renamePage(name, subParams, options);
+      break;
+    case "move":
+      movePage(name, subParams, options);
+      break;
+    default:
+      break;
   }
-
-  const isList = options && options["list"];
-  const isForm = options && options["form"];
-  genPage(name, dest, isList, isForm);
 };
 
 module.exports = pageAction;

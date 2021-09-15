@@ -1,19 +1,11 @@
-const fs = require("fs");
 const { Log, Spn } = require("../../../lib/utils/logger");
+const { updateJson } = require("../../helper/handleJson");
 
 const initPackageJson = async (appName) => {
   Spn.start("Initing: package.json ...");
 
   try {
-    const pkgJsonFilePath = `${appName}/package.json`;
-    const pkgJsonFileBuffer = await fs.promises.readFile(pkgJsonFilePath);
-    let pkgJsonFileContent = JSON.parse(pkgJsonFileBuffer);
-    pkgJsonFileContent.name = appName;
-    await fs.promises.writeFile(
-      pkgJsonFilePath,
-      JSON.stringify(pkgJsonFileContent, null, "\t")
-    );
-
+    updateJson(`${appName}/package.json`, 'name', appName);
     Spn.stop();
     Log("success", "Done: init package.json!");
   } catch (error) {

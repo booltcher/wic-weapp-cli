@@ -1,6 +1,3 @@
-const appletRepoLink =
-  "direct:https://github.com/blcher/wic-applet-template.git#main";
+const repoLink = "direct:https://github.com/blcher/wic-weapp-template.git#main";
 
-module.exports = {
-  appletRepoLink,
-};
+module.exports = { repoLink };

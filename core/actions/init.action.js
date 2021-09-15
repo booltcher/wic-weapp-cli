@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const { Log } = require("../../lib/utils/logger");
 const moduleProcessor = require("../processor/modules")
 const baseProcessor = require("../processor/base");
-const { genProjectPrompt } = require("../generator/genPrompt");
+const { genInitPrompt } = require("../generator/genPrompt");
 
 // create applet project
 const initAction = async (projectName) => {
@@ -16,7 +16,7 @@ const initAction = async (projectName) => {
     return;
   }
 
-  inquirer.prompt(genProjectPrompt(projectName)).then((res) => {
+  inquirer.prompt(genInitPrompt(projectName)).then((res) => {
     const appName = res.Name;
     const tabbarFlag = res.Tabbar;
     const tabbarList = tabbarFlag ? res["Tabbar list"] : [];
@@ -31,7 +31,7 @@ const initAction = async (projectName) => {
     
     baseProcessor(appName, tabbarFlag, tabbarList);
     
-    moduleProcessor(moduleList);
+    // moduleProcessor(moduleList);
 
     // componentProcessor(componentList);
   });

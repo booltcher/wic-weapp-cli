@@ -2,14 +2,13 @@
 const path = require("path");
 const ejs = require("ejs");
 
-// tplName => file content
-const compileTpl = (tplName, data) => {
-  const tplPostion = `../../lib/templates/${tplName}`;
+// tplPostion => file content
+const compileTpl = (tplPostion, data) => {
   const tplPath = path.resolve(__dirname, tplPostion);
-
   return new Promise((resolve) => {
     ejs.renderFile(tplPath, { data }, {}, (err, res) => {
       if (err) {
+        console.log(err)
         return;
       }
       resolve(res);

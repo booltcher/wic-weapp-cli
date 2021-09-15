@@ -9,9 +9,10 @@ const helpOptions = () => {
     )
     .option("-f, --form", "define a page as a form page")
     .option("-l, --list", "define a page as a list page")
-    .option("-r, --remove", "remove folder after updating")
-    .option("-r, --remove", "remove folder after updating")
-    .option("-r, --remove", "remove folder after updating");
+    .option("-a, --add", "add from build-in")
+    .option("-c, --create", "create new one")
+    .option("-rn, --rename", "rename page")
+    .option("-m, --move", "move page")
 
   program.on("--help", function () {
     console.log("");

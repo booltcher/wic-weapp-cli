@@ -1,7 +1,6 @@
-const fs = require("fs");
-const firstUpperCase = require("../../../lib/utils/firstUppercase");
 const { Log, Spn } = require("../../../lib/utils/logger");
 const genPage = require("../../generator/genPage");
+const { updateJson, pushJson} = require("../../helper/handleJson");
 
 const defaultPages = ["index", "user", "authorize"];
 
@@ -9,10 +8,7 @@ const initAppJson = async (appName, tabbarFlag, tabbarList) => {
   Spn.start("Initing: app.json...");
 
   try {
-    const appJsonFilePath = `${appName}/app.json`;
-    const appJsonFileBuffer = await fs.promises.readFile(appJsonFilePath);
-    let appJsonFileContent = JSON.parse(appJsonFileBuffer);
-    appJsonFileContent.window.navigationBarTitleText = appName;
+    updateJson(`${appName}/app.json`, `window.navigationBarTitleText`, appName);
 
     if (tabbarFlag) {
       const tabbarSet = Array.from(new Set(tabbarList));
@@ -23,30 +19,25 @@ const initAppJson = async (appName, tabbarFlag, tabbarList) => {
         list: [],
       };
       tabbarSet.map(async (tab) => {
-        const tabFirstUpperCase = firstUpperCase(tab);
         tabbarConfig.list.push({
           iconPath: `static/images/icon-tab-index.jpg`,
           selectedIconPath: "static/images/icon-tab-index-active.jpg",
-          pagePath: `pages/${tabFirstUpperCase}/${tab}`,
-          text: tabFirstUpperCase,
+          pagePath: `pages/${tab}/${tab}`,
+          text: tab,
         });
         if (!defaultPages.includes(tab)) {
-          appJsonFileContent.pages.push(`pages/${tabFirstUpperCase}/${tab}`);
-          await genPage(tab, `${appName}/pages`, false, false);
+          pushJson(`${appName}/app.json`, `pages`, `pages/${tab}/${tab}`);
+          await genPage(tab, `${appName}/pages`, 'page', null);
         }
       });
-      appJsonFileContent.tabBar = tabbarConfig;
-    }
 
-    await fs.promises.writeFile(
-      appJsonFilePath,
-      JSON.stringify(appJsonFileContent, null, "\t")
-    );
+      updateJson(`${appName}/app.json`, `tabBar`, tabbarConfig);
+    }
 
     Spn.stop();
     Log("success", "Done: init app.json!");
   } catch (error) {
-    spn.stop();
+    Spn.stop();
     Log("error", error);
   }
 };

@@ -9,14 +9,24 @@ const {
 const createCommand = () => {
   program
     .command("init <projectName>")
-    .description("create a applet project")
+    .description("create a weapp project")
     .action((name) => initAction(name));
 
   program
-    .command("page <options> <pageName>")
-    .description("create a page")
-    .action((name) =>
-      pageAction(name, program.opts(), program.dest || "pages")
+    .command("create-page <pageName> [options]")
+    .description("manage page")
+    .action((name) => pageAction("create", name, null, program.opts()));
+
+  program
+    .command("rename-page <page-destination> <new name>")
+    .description("rename page")
+    .action((oldPath, newName) => pageAction("rename", oldPath, newName, null));
+
+  program
+    .command("move-page <pageName> <targetDir>")
+    .description("move page")
+    .action((name, targetDir) =>
+      pageAction("move", name, targetDir, program.opts())
     );
 
   program
