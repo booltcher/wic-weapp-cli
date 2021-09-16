@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.1](https://github.com/blcher/wic-weapp-cli/compare/v0.4.0...v0.4.1) (2021-09-16)
+
+
+### Features
+
+* 🎸 Finish page relevant dev ([c1e85a9](https://github.com/blcher/wic-weapp-cli/commit/c1e85a90c1e74885026dcf65d9c133be69e1cfd5))
+
 ## [0.4.0](https://github.com/blcher/wic-weapp-cli/compare/v0.0.4...v0.4.0) (2021-09-15)
 
 

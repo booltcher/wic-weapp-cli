@@ -1,6 +1,6 @@
 {
   "name": "wic-weapp-cli",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A scaffold uesd to fast develop weapp projects.",
   "main": "index.js",
   "bin": {
