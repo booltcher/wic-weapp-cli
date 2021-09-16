@@ -1,6 +1,6 @@
 const { Log, Spn } = require("../../../lib/utils/logger");
 const genPage = require("../../generator/genPage");
-const { updateJson, pushJson} = require("../../helper/handleJson");
+const { updateJson, pushJson} = require("../../helper");
 
 const defaultPages = ["index", "user", "authorize"];
 

@@ -23,10 +23,10 @@ const createCommand = () => {
     .action((oldPath, newName) => pageAction("rename", oldPath, newName, null));
 
   program
-    .command("move-page <pageName> <targetDir>")
+    .command("move-page <current-destination> <target-destination>")
     .description("move page")
-    .action((name, targetDir) =>
-      pageAction("move", name, targetDir, program.opts())
+    .action((currentPath, targetPath) =>
+      pageAction("move", currentPath, targetPath, program.opts())
     );
 
   program

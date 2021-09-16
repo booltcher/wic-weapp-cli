@@ -1,5 +1,5 @@
 const { Log, Spn } = require("../../../lib/utils/logger");
-const { updateJson } = require("../../helper/handleJson");
+const { updateJson } = require("../../helper");
 
 const initPackageJson = async (appName) => {
   Spn.start("Initing: package.json ...");

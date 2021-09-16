@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { createDir, createFile, compileTpl } = require("../helper");
+const { createDir, createFile, compileTpl, readJson, updateJson } = require("../helper");
 
 const genPage = async (name, dest, tplName, data) => {
   const files = fs.readdirSync(
@@ -17,6 +17,10 @@ const genPage = async (name, dest, tplName, data) => {
     );
     createFile(targetPath, fileContent);
   });
+
+  const oldPathList = readJson("app.json", "pages") || [];
+  const newPathList = oldPathList.concat([`${dest}/${name}/${name}`]);
+  updateJson("app.json", "pages", newPathList);
 };
 
 module.exports = genPage;
