@@ -27,7 +27,7 @@ const initAppJson = async (appName, tabbarFlag, tabbarList) => {
         });
         if (!defaultPages.includes(tab)) {
           pushJson(`${appName}/app.json`, `pages`, `pages/${tab}/${tab}`);
-          await genPage(tab, `${appName}/pages`, 'page', null);
+          await genPage(tab, `${appName}/pages`, 'page', null, appName);
         }
       });
 

@@ -30,6 +30,13 @@ const createCommand = () => {
     );
 
   program
+    .command("delete-page <page-destination>")
+    .description("remove page")
+    .action((currentPath) =>
+      pageAction("delete", currentPath, null, program.opts())
+    );
+
+  program
     .command("config [configKey] [configValue]")
     .description("set config")
     .action((key, value) => configAction(key, value));

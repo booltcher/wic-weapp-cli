@@ -62,11 +62,11 @@ wic init <projectName>
   - It will: generate those pages which is in tabbar list, and set `tabBar` in file **app.json**, then import them in `pages` automatically -->
 
 ## Page
-### Create page
+## Create page
 ```
-wic create-page -c <pageName> [ -d | -f | -l ]
+wic create-page <pageName> [ -d | -f | -l ]
 ```
-#### options:
+### options:
 
 | short | long   | descirption                                                               |
 | ----- | ------ | ------------------------------------------------------------------------- |
@@ -74,54 +74,52 @@ wic create-page -c <pageName> [ -d | -f | -l ]
 | -f    | --form | create a page as a form page, within the form validator                   |
 | -d    | --dest | destination                                                               |
 
-### Rename page
+## Rename page
 ```
 wic rename-page <page-destination> <new name>
 ```
-### Move page
+## Move page
 ```
 wic move-page <current-destination> <target-destination>
+```
+## Delete page
+```
+wic delete-page <page-destination>
 ```
 
 ## Component
 
-### Add build-in component
+## Add built-in component
 Refer to: [Components](https://github.com/blcher/wic-weapp-template.git)
 ```
-wic com -a <componentName>
+wic add-com <componentName>
 ```
 
-### Create new component
+## Create new component
 ```
-wic com -c <componentName>
+wic create-com <componentName>
 ```
 
 ## Util
 
-### Add build-in util
+## Add built-in util
 
 Refer to: [Utils](https://github.com/blcher/wic-weapp-template.git)
 ```
 wic util -a <utilName>
 ```
 
-### Create util
+## Create util
 ```
 wic util -c <utilName>
 ```
 
-## Add build-in module
+## Add built-in module
 
 Refer to: [Modules](https://github.com/blcher/wic-weapp-template.git)
 ```
 wic add-module <moduleName> [-m, -t]
 ```
-
-### options:
-
-| short | long | descirption |
-| ----- | ---- | ----------- |
-
 ## Set global config
 
 - No key & No value: Browse all configurations.
@@ -152,7 +150,7 @@ wic update-icon [-r]
 <!-- Default icon: -->
 
 
-#### Options:
+### Options:
 
 | short | long     | descirption                                                                                         |
 | ----- | -------- | --------------------------------------------------------------------------------------------------- |
@@ -164,4 +162,16 @@ wic update-icon [-r]
 
 ### order :coffee:
 
-##
+### search :coffee:
+### wallet :coffee:
+
+### message :coffee:
+### feedback :coffee:
+### evaluate :coffee:
+### category :coffee:
+### product :coffee:
+
+## Components :coffee:
+### Address-picker :coffee:
+### Coupon :coffee:
+### Product-card :coffee:
