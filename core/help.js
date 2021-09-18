@@ -5,7 +5,7 @@ const helpOptions = () => {
   program
     .option(
       "-d, --dest <dest>",
-      "specify a folder destination, example: -d /src/pages"
+      "specify a folder destination, example: -d src/pages"
     )
     .option("-f, --form", "define a page as a form page")
     .option("-l, --list", "define a page as a list page")
@@ -13,6 +13,7 @@ const helpOptions = () => {
     .option("-c, --create", "create new one")
     .option("-rn, --rename", "rename page")
     .option("-m, --move", "move page")
+    // .option("-v, --cover", "cover pervious files when adding")
 
   program.on("--help", function () {
     console.log("");

@@ -1,7 +1,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const { Log } = require("../../lib/utils/logger");
-const moduleProcessor = require("../processor/modules")
+const moduleProcessor = require("../processor/module")
 const baseProcessor = require("../processor/base");
 const { genInitPrompt } = require("../generator/genPrompt");
 
@@ -34,6 +34,8 @@ const initAction = async (projectName) => {
     // moduleProcessor(moduleList);
 
     // componentProcessor(componentList);
+
+    Log('info', `use: cd ${projectName}`)
   });
 };
 

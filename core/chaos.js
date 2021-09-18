@@ -4,14 +4,17 @@ const {
   pageAction,
   iconAction,
   configAction,
+  addAction
 } = require("./actions");
 
 const createCommand = () => {
+  // init
   program
     .command("init <projectName>")
     .description("create a weapp project")
     .action((name) => initAction(name));
 
+  // page
   program
     .command("create-page <pageName> [options]")
     .description("manage page")
@@ -34,6 +37,14 @@ const createCommand = () => {
     .description("remove page")
     .action((currentPath) =>
       pageAction("delete", currentPath, null, program.opts())
+    );
+
+  // add [module, com, util]
+  program
+    .command("add <module/component/util name>")
+    .description("add built-in kits")
+    .action((name) =>
+      addAction(name, program.opts())
     );
 
   program

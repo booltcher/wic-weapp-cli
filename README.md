@@ -175,3 +175,9 @@ wic update-icon [-r]
 ### Address-picker :coffee:
 ### Coupon :coffee:
 ### Product-card :coffee:
+## Utils
+### AutoUpdate
+### FormValidator
+### ManualChooseLocation
+### Storage
+### getHeaderHeight
