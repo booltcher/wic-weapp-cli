@@ -158,26 +158,25 @@ wic update-icon [-r]
 
 ## Modules :coffee:
 
-### address :coffee:
-
-### order :coffee:
-
-### search :coffee:
-### wallet :coffee:
-
-### message :coffee:
-### feedback :coffee:
-### evaluate :coffee:
-### category :coffee:
-### product :coffee:
+[x] address 
+[] order 
+[] search 
+[] wallet 
+[] message
+[] feedback 
+[] evaluate
+[] category 
+[] product
 
 ## Components :coffee:
-### Address-picker :coffee:
-### Coupon :coffee:
-### Product-card :coffee:
-## Utils
-### AutoUpdate
-### FormValidator
-### ManualChooseLocation
-### Storage
-### getHeaderHeight
+[] address-picker
+[] coupon
+[] product-card
+## Utils (6/7)
+[x] AutoUpdate
+[x] FormValidator
+[x] ManualLocate## [] Storage
+[x] CustomHeader## 
+[x] Paging## 
+[x] Prompt
+[] Sku

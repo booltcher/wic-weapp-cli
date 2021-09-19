@@ -8,7 +8,7 @@ const utilKitsList = [
   "Sku",
 ];
 
-const componentKitsList = ["address-picker", "coupon", "product-card", "score"];
+const componentKitsList = ["address-picker", "coupon", "product-card"];
 
 const moduleKitsList = [
   "address",

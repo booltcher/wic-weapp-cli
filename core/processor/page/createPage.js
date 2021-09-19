@@ -10,7 +10,7 @@ const createPage = async (name, subParams, options) => {
   }
 
   await genPage(name, targetDir, "page", {
-    isList: options.list,
+    isList: !!options.list,
     isForm: options.form,
   });
   Log("success", `create new ${name} page`);

@@ -13,7 +13,8 @@ const helpOptions = () => {
     .option("-c, --create", "create new one")
     .option("-rn, --rename", "rename page")
     .option("-m, --move", "move page")
-    // .option("-v, --cover", "cover pervious files when adding")
+    .option("-r, --remove", "remove folder after updating");
+  // .option("-v, --cover", "cover pervious files when adding")
 
   program.on("--help", function () {
     console.log("");
